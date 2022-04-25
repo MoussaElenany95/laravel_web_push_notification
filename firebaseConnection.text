@@ -1,0 +1,23 @@
+// <script type="module">
+//   // Import the functions you need from the SDKs you need
+//   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+//   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-analytics.js";
+//   // TODO: Add SDKs for Firebase products that you want to use
+//   // https://firebase.google.com/docs/web/setup#available-libraries
+
+//   // Your web app's Firebase configuration
+//   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//   const firebaseConfig = {
+//     apiKey: "AIzaSyBLbvAZNLe1QbAeOF13yZedtyuPRi2KnpE",
+//     authDomain: "notificationwithlaravel.firebaseapp.com",
+//     projectId: "notificationwithlaravel",
+//     storageBucket: "notificationwithlaravel.appspot.com",
+//     messagingSenderId: "806908321820",
+//     appId: "1:806908321820:web:e5b27f4c7ad0e007f63fd9",
+//     measurementId: "G-1WRGGMYJ8X"
+//   };
+
+//   // Initialize Firebase
+//   const app = initializeApp(firebaseConfig);
+//   const analytics = getAnalytics(app);
+// </script>
