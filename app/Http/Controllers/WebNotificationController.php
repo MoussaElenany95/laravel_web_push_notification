@@ -18,23 +18,27 @@ class WebNotificationController extends Controller
 
     public function storeToken(Request $request)
     {
-
-        auth()->user()->update(['device_key' => $request->token]);
-        return response()->json(['Token successfully stored.']);
+       
+        auth()->user()->loginDevices()->create(['device_key' => $request->token]);
+        return response()->json([$request->token]);
     }
 
     public function sendWebNotification(Request $request)
     {
         $url = 'https://fcm.googleapis.com/fcm/send';
-        $FcmToken = User::whereNotNull('device_key')->pluck('device_key')->all();
-
-        $serverKey = 'AAAAu9974Bw:APA91bGY5PaUtEDEq_gFmfpc5hawgKmXqFd1oU_-oUDIeckh33yXKt2WAlmDVhdsD-YmyERZ_3jmkuvc0qQoFSFdQnpfSVKz6bsuLbmvDWVoEzmmUfLr2OgZ0bkolEfsWUsdZSrg-8bA';
+        $FcmToken = auth()->user()->loginDevices()->whereNotNull('device_key')->pluck('device_key')->all();
+        $serverKey = 'AAAArkoSrk4:APA91bFnxWqsGmMiZvWW8tWaI-qUSRDWdUYmRRKRdxRECI5HpvJH6Ur5cMvvTqcLEN1LoKjdY3wzaFEorLnpvb6fCObjH3YD_OfA0AhXaT2JsCalrBzF1W3OoZ4AI9wpXpKZUiuAB0Jr';
 
         $data = [
             "registration_ids" => $FcmToken,
             "notification" => [
-                "title" => $request->title,
-                "body" => $request->body,
+                "title" => "fdsfdsfsdf",
+                "body" => "fdsfdsfdsfsdfsdf",
+                "sound" => "default"
+            ],
+            "data" =>[
+                "type" => "orders",
+                "order_id" => "10"
             ]
         ];
         $encodedData = json_encode($data);

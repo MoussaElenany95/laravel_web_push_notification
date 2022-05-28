@@ -35,13 +35,13 @@
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase.js"></script>
 <script>
     var firebaseConfig = {
-        apiKey: "AIzaSyBLbvAZNLe1QbAeOF13yZedtyuPRi2KnpE"
-        , authDomain: "notificationwithlaravel.firebaseapp.com"
-        , projectId: "notificationwithlaravel"
-        , storageBucket: "notificationwithlaravel.appspot.com"
-        , messagingSenderId: "806908321820"
-        , appId: "1:806908321820:web:e5b27f4c7ad0e007f63fd9"
-        , measurementId: "G-1WRGGMYJ8X"
+        apiKey: "AIzaSyBs50enSaLvnLCP8rEuu47LwGzdggjbTqI",
+        authDomain: "nafeesbrands-16545.firebaseapp.com",
+        projectId: "nafeesbrands-16545",
+        storageBucket: "nafeesbrands-16545.appspot.com",
+        messagingSenderId: "748567047758",
+        appId: "1:748567047758:web:1bd58d05d14521c3589d1f",
+        measurementId: "G-83RHQ1C436"
     };
     firebase.initializeApp(firebaseConfig);
     const messaging = firebase.messaging();
@@ -67,7 +67,7 @@
                     }
                     , dataType: 'JSON'
                     , success: function(response) {
-                        alert('Token stored.');
+                        alert(response);
                     }
                     , error: function(error) {
                         alert(error);
@@ -78,12 +78,7 @@
             });
     }
     messaging.onMessage(function(payload) {
-        const title = payload.notification.title;
-        const options = {
-            body: payload.notification.body
-            , icon: payload.notification.icon
-        , };
-        new Notification(title, options);
+        console.log(payload.notification);
     });
 
 </script>

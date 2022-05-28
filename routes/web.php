@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WebNotificationController;
+use App\Http\Controllers\AppleSigninController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,8 @@ Route::post('/send-web-notification', [WebNotificationController::class, 'sendWe
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/apple-login',[AppleSigninController::class,'login']);
+Route::post('/apple-callback',[AppleSigninController::class,'callback']);
+

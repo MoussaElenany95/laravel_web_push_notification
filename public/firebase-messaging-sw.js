@@ -10,36 +10,16 @@ importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js');
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 firebase.initializeApp({
-  apiKey: "AIzaSyBLbvAZNLe1QbAeOF13yZedtyuPRi2KnpE",
-  authDomain: "notificationwithlaravel.firebaseapp.com",
-  projectId: "notificationwithlaravel",
-  storageBucket: "notificationwithlaravel.appspot.com",
-  messagingSenderId: "806908321820",
-  appId: "1:806908321820:web:e5b27f4c7ad0e007f63fd9",
-  measurementId: "G-1WRGGMYJ8X"
+  apiKey: "AIzaSyBs50enSaLvnLCP8rEuu47LwGzdggjbTqI",
+  authDomain: "nafeesbrands-16545.firebaseapp.com",
+  projectId: "nafeesbrands-16545",
+  storageBucket: "nafeesbrands-16545.appspot.com",
+  messagingSenderId: "748567047758",
+  appId: "1:748567047758:web:1bd58d05d14521c3589d1f",
+  measurementId: "G-83RHQ1C436"
 });
 
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
 const messaging = firebase.messaging();
-messaging.setBackgroundMessageHandler(function (payload) {
-    console.log("Message received.", payload);
-    const title = "Hello world is awesome";
-    const options = {
-        body: "Your notificaiton message .",
-        icon: "/firebase-logo.png",
-    };
-    return self.registration.showNotification(
-        title,
-        options,
-    );
-});
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../firebase-messaging-sw.js')
-      .then(function(registration) {
-        console.log('Registration successful, scope is:', registration.scope);
-      }).catch(function(err) {
-        console.log('Service worker registration failed, error:', err);
-      });
-    }

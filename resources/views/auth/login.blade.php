@@ -56,16 +56,21 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
                             </div>
+                           
                         </div>
+                       
                     </form>
                 </div>
+                <div class="col-md-4 m-auto ">
+                    @signInWithApple("black", false, "sign-in",7)
+                </div><br>
+                
             </div>
         </div>
     </div>
